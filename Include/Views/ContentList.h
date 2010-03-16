@@ -1,9 +1,13 @@
 #ifndef CONTENTLIST_H
 #define CONTENTLIST_H
 
-#include "Include/Views/IContentList.h"
-
 #include <QObject>
+#include <QScopedPointer>
+
+#include "Include/Views/IContentList.h"
+#include "Include/Views/ItemViewDelegate.h"
+
+typedef QScopedPointer< CItemViewDelegate > CItemViewDelegatePtr;
 
 class QListView;
 
@@ -29,6 +33,7 @@ private:
 
 private:
     QListView *m_pListView;
+    CItemViewDelegatePtr m_delegate;
     CContentModelPtr m_pContentModel;
 };
 

@@ -26,6 +26,9 @@ public:
     virtual QVariant data (const QModelIndex &index, int role = Qt::DisplayRole) const;
     //}
 
+    QString getTitle(int idx);
+    QString getRef(int idx);
+
 signals:
     void OnChanged();    
 

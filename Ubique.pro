@@ -11,7 +11,9 @@ HEADERS += Include/Controllers/ContentScreenController.h \
     Include/Loader/NetworkTransport.h \
     Include/DataTypes.h \
     Include/Loader/IParser.h \
-    Include/Loader/XmlParser.h
+    Include/Loader/XmlParser.h \
+    Include/Views/ItemViewDelegate.h \
+    Include/Views/ItemView.h
 SOURCES += Src/Controllers/ContentScreenController.cpp \
     Src/main.cpp \
     Src/Models/ContentModel.cpp \
@@ -19,8 +21,10 @@ SOURCES += Src/Controllers/ContentScreenController.cpp \
     Src/Views/ContentScreen.cpp \
     Src/Views/ContentList.cpp \
     Src/Loader/NetworkTransport.cpp \
-    Src/Loader/XmlParser.cpp
-FORMS += Resources/ContentScreen.ui
-
+    Src/Loader/XmlParser.cpp \
+    Src/Views/ItemViewDelegate.cpp \
+    Src/Views/ItemView.cpp
+FORMS += Resources/ContentScreen.ui \
+    Resources/ItemView.ui
 QT += network \
     xml

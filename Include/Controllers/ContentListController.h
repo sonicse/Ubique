@@ -23,7 +23,7 @@ signals:
 
 public slots:
     void OnModelChanged();
-    void OnDblClick();
+    void OnDblClick(const QModelIndex &);
 
 
 private:

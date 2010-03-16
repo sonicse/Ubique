@@ -33,12 +33,17 @@ int CContentModel::rowCount( const QModelIndex  &parent ) const
 ////////////////////////////////////////////////////////////////////////////////////
 QVariant CContentModel::data( const QModelIndex &index, int role) const
 {
-    if( !index.isValid() )
-    {
-        return QVariant();
-    }
+    return QVariant();
+}
 
-    return ( role == Qt::DisplayRole )
-            ? m_list[index.row()]->m_title
-            : QVariant();
+////////////////////////////////////////////////////////////////////////////////////
+QString CContentModel::getTitle(int idx)
+{
+    return m_list[idx]->m_title;
+}
+
+////////////////////////////////////////////////////////////////////////////////////
+QString CContentModel::getRef(int idx)
+{
+    return m_list[idx]->m_href;
 }

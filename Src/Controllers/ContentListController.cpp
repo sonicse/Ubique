@@ -2,6 +2,7 @@
 
 //QT headers
 #include <QDebug>
+#include <QProcess>
 
 ////////////////////////////////////////////////////////////////////////////////////
 //ctor
@@ -28,7 +29,15 @@ void CContentListController::OnModelChanged()
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
-void CContentListController::OnDblClick()
+void CContentListController::OnDblClick(const QModelIndex &index)
 {
     qDebug() << "item doubleclicked";
+
+    //QString program = "C:/Program Files/VideoLAN/VLC/vlc.exe";
+    QString program = "/Встроенная память/Program Files/CorePlayer/player.exe";
+    QStringList arguments;
+    arguments << m_pContentModel->getRef(index.row());
+
+    QProcess *myProcess = new QProcess();
+    myProcess->start(program, arguments);
 }

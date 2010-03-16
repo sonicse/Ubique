@@ -4,9 +4,6 @@
 #include <QObject>
 #include <QString>
 #include <QScopedPointer>
-
-//typedef QScopedPointer<QNetworkAccessManager> QNetworkAccessManagerPtr;
-
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 

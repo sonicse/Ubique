@@ -25,7 +25,6 @@ CNetworkTransport::~CNetworkTransport()
 int CNetworkTransport::Read(QString &data)
 {
     m_pManager->get( QNetworkRequest(QUrl("http://work.sonicse.operaunite.com/media_player_11/playlist/asx/") ));
-    //m_pManager->get( QNetworkRequest(QUrl("http://localhost/unite.asx") ));
 
     loop.exec();
 
