@@ -33,10 +33,10 @@ void CContentListController::OnDblClick(const QModelIndex &index)
 {
     qDebug() << "item doubleclicked";
 
-    //QString program = "C:/Program Files/VideoLAN/VLC/vlc.exe";
-    QString program = "/Âñòðîåííàÿ ïàìÿòü/Program Files/CorePlayer/player.exe";
+    //QString program = QString::fromUtf8("D:/Ñ‚ÐµÑÑ‚/vlc.exe");
+    QString program = QString::fromUtf8("/Ð’ÑÑ‚Ñ€Ð¾ÐµÐ½Ð½Ð°Ñ Ð¿Ð°Ð¼ÑÑ‚ÑŒ/Program Files/CorePlayer/player.exe");
     QStringList arguments;
-    arguments << m_pContentModel->getRef(index.row());
+    arguments << QString::fromLocal8Bit(m_pContentModel->getRef(index.row()).toUtf8());
 
     QProcess *myProcess = new QProcess();
     myProcess->start(program, arguments);
