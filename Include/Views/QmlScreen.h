@@ -3,10 +3,11 @@
 
 #include <QWidget>
 #include <QDeclarativeComponent>
+#include <QDeclarativeView>
 
 #include "Include/Views/IContentScreen.h"
 
-class QDeclarativeEngine;
+class QDeclarativeView;
 
 class CQmlScreen : public QWidget
         ,public IContentScreen
@@ -14,7 +15,7 @@ class CQmlScreen : public QWidget
 Q_OBJECT
 public:
     //ctor
-    explicit CQmlScreen(QDeclarativeEngine *engine);
+    explicit CQmlScreen(QDeclarativeView *view);
     //dtor
     virtual ~CQmlScreen();
 
@@ -32,7 +33,7 @@ public slots:
 
 private:
     //Variables
-    QDeclarativeEngine *m_engine;
+    QDeclarativeView *m_view;
     QDeclarativeComponent component;
     QObject *m_object;
 };

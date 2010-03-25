@@ -2,9 +2,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////////
 //ctor
-CQmlScreen::CQmlScreen(QDeclarativeEngine *engine)
+CQmlScreen::CQmlScreen(QDeclarativeView *view)
     : QWidget()
-    , m_engine(engine)
+    , m_view(view)
     , m_component(engine, QUrl("Qml/qml.qml"))
 {
     m_object = m_component.create();
@@ -40,5 +40,7 @@ void CQmlScreen::SetOnRefresh(QObject *pObj)
 ////////////////////////////////////////////////////////////////////////////////////
 void CContentScreen::show()
 {
-    //QWidget::show();
+    Q_ASSERT( m_view );
+
+    n_view->show();
 }

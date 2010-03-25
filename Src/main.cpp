@@ -1,7 +1,7 @@
 //QT headers
 #include <QtGui>
 //QML
-#include <QDeclarativeEngine>
+#include <QDeclarativeView>
 
 //Headers
 #include "Include/Controllers/ContentScreenController.h"
@@ -20,10 +20,10 @@ int main(int argc, char *argv[])
     QApplication app(argc, argv);
 
     //QML View
-    QDeclarativeEngine *engine = new QDeclarativeEngine();
+    QDeclarativeView *view = new QDeclarativeView();
 
     //Create View
-    IContentScreenPtr pContentScreen = IContentScreenPtr(new CQmlScreen(engine));
+    IContentScreenPtr pContentScreen = IContentScreenPtr(new CQmlScreen(view));
     //Create Content Model
     CContentModelPtr pContentModel(new CContentModel());
 
