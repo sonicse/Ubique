@@ -14,7 +14,8 @@ HEADERS += Include/Controllers/ContentScreenController.h \
     Include/Loader/XmlParser.h \
     Include/Views/ItemViewDelegate.h \
     Include/Views/ItemView.h \
-    Include/Views/QmlScreen.h
+    Include/Views/QmlScreen.h \
+    Include/Views/QmlList.h
 SOURCES += Src/Controllers/ContentScreenController.cpp \
     Src/main.cpp \
     Src/Models/ContentModel.cpp \
@@ -25,10 +26,10 @@ SOURCES += Src/Controllers/ContentScreenController.cpp \
     Src/Loader/XmlParser.cpp \
     Src/Views/ItemViewDelegate.cpp \
     Src/Views/ItemView.cpp \
-    Src/Views/QmlScreen.cpp
+    Src/Views/QmlScreen.cpp \
+    Src/Views/QmlList.cpp
 FORMS += Resources/ContentScreen.ui \
     Resources/ItemView.ui
 QT += network \
     xml \
     declarative
-
