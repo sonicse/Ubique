@@ -5,7 +5,7 @@
 #include <QScopedPointer>
 
 #include "Include/Views/IContentList.h"
-#include "Include/Views/ItemViewDelegate.h"
+#include "Include/Views/Widget/ItemViewDelegate.h"
 
 typedef QScopedPointer< CItemViewDelegate > CItemViewDelegatePtr;
 

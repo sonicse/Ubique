@@ -11,7 +11,7 @@
 
 typedef QSharedPointer <CContentModel> CContentModelPtr;
 typedef QSharedPointer <CContentListController> CContentListControllerPtr;
-typedef QSharedPointer <IContentScreen> IContentScreenPtr;
+//typedef QSharedPointer <IContentScreen> IContentScreenPtr;
 
 class CContentScreenController : public QObject
 {

@@ -4,81 +4,29 @@ Rectangle {
     id: screen
     width: 480
     height: 800
-    color: "white"
+    color: "#343434";
 
-    Component {
-        id: delegate
-        Item {
-            id: wrapper
-            height: 50
-            width: parent.width
+    Image { source: "images/stripes.png"; fillMode: Image.Tile; anchors.fill: parent; opacity: 0.3 }
 
-            Text {
-                text: str
-            }
-        }
-    }
+    Loading { anchors.centerIn: parent; visible: contentModel.status == 2 }
 
     Component {
         id: highlight
-
         Rectangle {
-            height: 50
-            width: parent.width
-            color: "lightsteelblue"
+            color: "white";
+            opacity: index % 2 ? 0.6 : 0.4;
         }
     }
+
+    ListDelegate { id: listDelegate }
 
     ListView {
         id: listview
-        model: testModel
-        delegate: delegate
+        model: contentModel
+        delegate: listDelegate
         highlight: highlight
         focus: true
-        //anchors.fill: parent
-        width: parent.width; height: parent.height
+        anchors.fill: parent
     }
 
-    ListModel {
-        id: testModel
-
-        ListElement {
-            str: "Item 1"
-        }
-
-        ListElement {
-            str: "Item 2"
-        }
-
-        ListElement {
-            str: "Item 3"
-        }
-    }
 }
-
-//    Image {
-//        source: "images/test.jpg"
-//        anchors.fill: parent
-//        fillMode: Image.PreserveAspectCrop
-//    }
-//
-//    signal test();
-//
-//    MouseArea {
-//        id: mouseRect
-//        onClicked: itemId.test();
-//        anchors.fill: parent
-//    }
-//
-//    states: State {
-//                 name: "clicked"; when: mouseRect.pressed == true
-//                 PropertyChanges { target: itemId; rotation: 180 }
-//             }
-//
-//    transitions: Transition {
-//                 from: ""; to: "clicked"; reversible: true
-//                 ParallelAnimation {
-//                     NumberAnimation { properties: "rotation"; duration: 500; easing.type: "InOutQuad" }
-//                 }
-//             }
-//}

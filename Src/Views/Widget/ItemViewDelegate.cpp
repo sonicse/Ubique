@@ -1,4 +1,4 @@
-#include "Include/Views/ItemViewDelegate.h"
+#include "Include/Views/Widget/ItemViewDelegate.h"
 
 #include<QPainter>
 

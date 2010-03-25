@@ -10,7 +10,7 @@ CContentListController::CContentListController(const IContentListPtr &pContentLi
     :QObject()
     ,m_pContentList(pContentList)
 {
-    Q_ASSERT( m_pContentList.data() );
+    //Q_ASSERT( m_pContentList.data() );
     m_pContentList->SetOnDblClick( this );
 }
 
@@ -28,20 +28,20 @@ void CContentListController::SetContentModel(CContentModelPtr pContentModel)
 ////////////////////////////////////////////////////////////////////////////////////
 void CContentListController::OnModelChanged()
 {
-    Q_ASSERT( m_pContentList.data() );
+    //Q_ASSERT( m_pContentList.data() );
 
     m_pContentList->SetContentListModel( m_pContentModel );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
-void CContentListController::OnDblClick(const QModelIndex &index)
+void CContentListController::onDoubleClicked(int index)
 {
     qDebug() << "item doubleclicked";
 
-    //QString program = QString::fromUtf8("D:/тест/vlc.exe");
-    QString program = QString::fromUtf8("/Встроенная память/Program Files/CorePlayer/player.exe");
+    QString program = QString::fromUtf8("C:/Program Files/VideoLAN/VLC/vlc.exe");
+    //QString program = QString::fromUtf8("/Встроенная память/Program Files/CorePlayer/player.exe");
     QStringList arguments;
-    arguments << QString::fromLocal8Bit(m_pContentModel->getRef(index.row()).toUtf8());
+    arguments << QString::fromLocal8Bit(m_pContentModel->getRef(index).toUtf8());
 
     QProcess *myProcess = new QProcess();
     myProcess->start(program, arguments);

@@ -6,8 +6,7 @@
 //XXX:
 #include <QDebug>
 
-typedef QSharedPointer <class CContentModel> CContentModelPtr;
-typedef QSharedPointer <const class CContentModel> CContentModelConstPtr;
+#include "Include/Models/ContentModel.h"
 
 class IContentList
 {
@@ -17,6 +16,7 @@ public:
     virtual void SetOnDblClick(QObject *pObj) = 0;
 };
 
-typedef QSharedPointer <IContentList> IContentListPtr;
+//typedef QSharedPointer <IContentList> IContentListPtr;
+typedef IContentList* IContentListPtr;
 
 #endif // ICONTENTLIST_H

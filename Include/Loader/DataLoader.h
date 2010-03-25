@@ -12,6 +12,8 @@ class CDataLoader : public IDataLoader
 typedef QScopedPointer<Parser> ParserPtr;
 typedef QScopedPointer<Transport> TransportPtr;
 
+typedef QScopedPointer<QObject> NotifierPtr;
+
 public:
     //ctor
     CDataLoader()
@@ -21,6 +23,10 @@ public:
     }
 
     //Implemention of IDataLoader interface
+    virtual void SetOnComplete(QObject *pObj)
+    {
+
+    };
     virtual int GetContentData( LeafPtr pLeaf)
     {
         int res = 1;
@@ -36,10 +42,9 @@ public:
 
 //variables
 private:
-    ParserPtr		m_pParser;
-    TransportPtr	m_pTransport;
-
-
+    ParserPtr       m_pParser;
+    TransportPtr    m_pTransport;
+    NotifierPtr     m_notifier;
 };
 
 #endif // DATALOADER_H

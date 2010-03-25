@@ -1,4 +1,4 @@
-#include "Include/Views/ContentList.h"
+#include "Include/Views/Widget/ContentList.h"
 
 //Qt headers
 #include <QListView>
@@ -6,7 +6,7 @@
 #include <QListWidgetItem>
 
 #include "Include/Models/ContentModel.h"
-#include "Include/Views/ItemViewDelegate.h"
+#include "Include/Views/Widget/ItemViewDelegate.h"
 
 ////////////////////////////////////////////////////////////////////////////////////
 //ctor

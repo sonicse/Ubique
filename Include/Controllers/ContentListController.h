@@ -8,7 +8,6 @@
 #include "Include/Views/IContentList.h"
 
 typedef QSharedPointer<CContentModel> CContentModelPtr;
-typedef QSharedPointer<IContentList> IContentListPtr;
 
 class CContentListController : public QObject
 {
@@ -23,7 +22,7 @@ signals:
 
 public slots:
     void OnModelChanged();
-    void OnDblClick(const QModelIndex &);
+    void onDoubleClicked(int);
 
 
 private:

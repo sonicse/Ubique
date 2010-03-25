@@ -4,7 +4,7 @@
 //Qt header
 #include <QAbstractItemDelegate>
 
-#include "Include/Views/ItemView.h"
+#include "Include/Views/Widget/ItemView.h"
 #include "Include/Models/ContentModel.h"
 
 class CItemViewDelegate : public QAbstractItemDelegate

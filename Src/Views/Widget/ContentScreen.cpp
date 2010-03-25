@@ -1,4 +1,4 @@
-#include "Include/Views/ContentScreen.h"
+#include "Include/Views/Widget/ContentScreen.h"
 
 //Qt headers
 #include <QDebug>
@@ -6,7 +6,7 @@
 //Generated header
 #include "Ui_ContentScreen.h"
 
-#include "Include/Views/ContentList.h"
+#include "Include/Views/Widget/ContentList.h"
 
 ////////////////////////////////////////////////////////////////////////////////////
 //ctor

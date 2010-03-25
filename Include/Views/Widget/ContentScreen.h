@@ -13,7 +13,7 @@ namespace Ui
 }
 
 typedef QScopedPointer<Ui::UiContentScreen> UiContentScreenPtr;
-typedef QSharedPointer<class IContentList> IContentListPtr;
+//typedef QSharedPointer<class IContentList> IContentListPtr;
 typedef QSharedPointer<class CContentList> CContentListPtr;
 
 class CContentScreen : public QWidget

@@ -10,6 +10,7 @@ class IDataLoader
 public:
     virtual ~IDataLoader(){};
     virtual int GetContentData( LeafPtr ) = 0;
+    virtual void SetOnComplete(QObject *pObj) = 0;
 };
 
 typedef QSharedPointer <IDataLoader> IDataLoaderPtr;

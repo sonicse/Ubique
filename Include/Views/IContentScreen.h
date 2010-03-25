@@ -2,8 +2,7 @@
 #define ICONTENTSCREEN_H
 
 #include <QSharedPointer>
-
-typedef QSharedPointer <class IContentList> IContentListPtr;
+#include "Include/Views/IContentList.h"
 
 class IContentScreen
 {
@@ -15,6 +14,7 @@ public:
     virtual void show() = 0;
 };
 
-typedef QSharedPointer <IContentScreen> IContentScreenPtr;
+//typedef QSharedPointer <IContentScreen> IContentScreenPtr;
+typedef IContentScreen* IContentScreenPtr;
 
 #endif // ICONTENTSCREEN_H
