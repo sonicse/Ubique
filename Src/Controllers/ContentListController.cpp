@@ -10,12 +10,15 @@ CContentListController::CContentListController(const IContentListPtr &pContentLi
     :QObject()
     ,m_pContentList(pContentList)
 {
+    Q_ASSERT( m_pContentList.data() );
     m_pContentList->SetOnDblClick( this );
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
 void CContentListController::SetContentModel(CContentModelPtr pContentModel)
 {
+    Q_ASSERT( pContentModel.data() );
+
     m_pContentModel = pContentModel;
 
     QObject::connect(m_pContentModel.data(), SIGNAL( OnChanged() ), SLOT( OnModelChanged() ));
@@ -25,6 +28,8 @@ void CContentListController::SetContentModel(CContentModelPtr pContentModel)
 ////////////////////////////////////////////////////////////////////////////////////
 void CContentListController::OnModelChanged()
 {
+    Q_ASSERT( m_pContentList.data() );
+
     m_pContentList->SetContentListModel( m_pContentModel );
 }
 

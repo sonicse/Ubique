@@ -34,8 +34,11 @@ public slots:
 private:
     //Variables
     QDeclarativeView *m_view;
-    QDeclarativeComponent component;
+    QDeclarativeContext *m_context;
+    QDeclarativeComponent m_component;
     QObject *m_object;
+
+    IContentListPtr m_pContentList;
 };
 
 #endif // QMLSCREEN_H

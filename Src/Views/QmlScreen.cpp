@@ -1,13 +1,22 @@
 #include "Include/Views/QmlScreen.h"
 
+#include <QDebug>
+#include <QDeclarativeEngine>
+#include <QDeclarativeContext>
+
+#include "Include/Views/QmlList.h"
+
 ////////////////////////////////////////////////////////////////////////////////////
 //ctor
 CQmlScreen::CQmlScreen(QDeclarativeView *view)
     : QWidget()
     , m_view(view)
-    , m_component(engine, QUrl("Qml/qml.qml"))
+    , m_component(engine, QUrl(":Qml.qml"))
 {
-    m_object = m_component.create();
+    m_context = new QDeclarativeContext(m_engine->rootContext());
+    m_object = m_component.create(m_context);
+
+    m_pContentList = IContentListPtr( new CQmlList(m_context) );
 }
 
 
@@ -16,13 +25,15 @@ CQmlScreen::CQmlScreen(QDeclarativeView *view)
 CQmlScreen::~CQmlScreen()
 {
     qDebug() << "~CQmlScreen() called";
+
+    delete m_context;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
 IContentListPtr CQmlScreen::GetContentList() const
 {
-    //return m_pContentList;
-    return IContentListPtr();
+    Q_ASSERT( m_pContentList.data() );
+    return m_pContentList;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
@@ -38,7 +49,7 @@ void CQmlScreen::SetOnRefresh(QObject *pObj)
 }
 
 ////////////////////////////////////////////////////////////////////////////////////
-void CContentScreen::show()
+void CQmlScreen::show()
 {
     Q_ASSERT( m_view );
 
